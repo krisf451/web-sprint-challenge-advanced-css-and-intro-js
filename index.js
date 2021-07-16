@@ -267,13 +267,19 @@ function get20s(arr) {
   //create a new array to push included items into
   let newArray = [];
   //loop through entire array to find artists born/died in 20th century
-  // for (let i = 0; i < arr.length; i++){
-  //   //conditional logic for inbetweeen 1900-2000
-  //   if(arr[i].years)
-  // }
-  /*Your Code Here*/
+  for (let i = 0; i < arr.length; i++) {
+    //conditional logic for inbetweeen 1900-2000
+    if (
+      Number(arr[i].years.split(" ")[0]) >= 1900 &&
+      Number(arr[i].years.split(" ")[2]) <= 2000
+    ) {
+      newArray.push(arr[i].name);
+    }
+  }
   return newArray;
 }
+
+console.log("task4: ", get20s(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
